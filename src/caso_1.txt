@@ -1,11 +1,16 @@
 # Inferring a Common Rate, With Posterior Predictive
 model{  
    # Observed Counts
-   k1 ~ dbin(theta,n1)
-   k2 ~ dbin(theta,n2)
-   # Prior on Single Rate Theta
-   theta ~ dbeta(1,1)
+   k1 ~ dbin(theta1,n)
+   k2 ~ dbin(theta2,n)
+   k3 ~ dbin(theta3,n)
+   # Prior on Rates Theta
+   theta1 ~ ifelse(trunc(alpha))== 0, dbeta(0.5,0.5), dbeta(100,100))
+   theta2 ~ ifelse(trunc(alpha))== 1, dbeta(0.5,0.5), dbeta(100,100))
+   theta3 ~ ifelse(trunc(alpha))== 2, dbeta(0.5,0.5), dbeta(100,100))
+   # Prior on Rate Alpha
+   alpha ~ dunif(0, 3)
    # Posterior Predictive
-   postpredk1 ~ dbin(theta,n1)
-   postpredk2 ~ dbin(theta,n2)   
+   # postpredk1 ~ dbin(theta,n)
+   # postpredk2 ~ dbin(theta,n)   
 }
