@@ -8,11 +8,12 @@ k1 = 3;
 k2 = 4;
 k3 = 10;
 
+
 %% Sampling
 % MCMC Parameters
 nchains = 2; % How Many Chains?
-nburnin = 1e2; % How Many Burn-in Samples?
-nsamples = 1e4;  %How Many Recorded Samples?
+nburnin = 10e2; % How Many Burn-in Samples?
+nsamples = 10e4;  %How Many Recorded Samples?
 nthin = 1; % How Often is a Sample Recorded?
 doparallel = 0; % Parallel Option
 
@@ -22,9 +23,9 @@ datastruct = struct('k1',k1,'k2',k2,'k3',k3,'n',n);
 % Initialize Unobserved Variables
 for i=1:nchains
     S.theta1 = 0.5; % Intial Value
-    S.theta2 = 0.5; % Intial Value
+    S.theta2 = 0.8; % Intial Value
     S.theta3 = 0.5; % Intial Value
-    S.alpha = 0.5; % Intial Value
+    S.alpha = randi([1 3]); % Intial Value
     init0(i) = S;
 end
 
@@ -53,17 +54,10 @@ toc
 % set(gcf,'units','norm','pos',[.2 .2 .6 .4],'paperpositionmode','auto');
 
 % % Parameter Space
-% subplot(121);hold on;
-% axis square;
-% eps=.015;bins=[0:eps:1];binsc=[eps/2:eps:1-eps/2];
-% count=histc(reshape(samples.theta,1,[]),bins);
-% count=count(1:end-1);
-% count=count/sum(count)/eps;
-% ph=plot(binsc,count,'k-');
-% set(gca,'xlim',[0 1],'box','on','fontsize',14,'xtick',[0:.2:1],'ytick',[1:ceil(max(get(gca,'ylim')))]);
-% set(gca,'box','on','fontsize',14);
-% xlabel('Rate','fontsize',16);
-% ylabel('Density','fontsize',16);
+x = linspace(0,3, length(samples.alpha(1,:)))
+y = samples.alpha(1,:)
+
+barplot(x, y)
 
 % % Data Space
 % subplot(122);hold on;
