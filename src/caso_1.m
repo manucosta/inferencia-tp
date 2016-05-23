@@ -49,32 +49,24 @@ fprintf( 'Running JAGS ...\n' );
     'workingdir' , 'tmpjags' );
 toc
 
-% %% Analysis
-% figure(5);clf;
-% set(gcf,'units','norm','pos',[.2 .2 .6 .4],'paperpositionmode','auto');
+% Distribucion de las 4 variables a predecir
 
-% % Parameter Space
-x = linspace(0,3, length(samples.alpha(1,:)))
-y = samples.alpha(1,:)
+% alpha
+%[a,b] = hist([samples.alpha(1,:),samples.alpha(2,:)],unique(samples.alpha))
+%bar(a)
+media_alpha = stats.mean.alpha
+desvioStandard_alpha = stats.std.alpha
+% theta1
+%histfit([samples.theta1(1,:),samples.theta1(2,:)])
+media_t1 = stats.mean.theta1
+desvioStandard_t1 = stats.std.theta1
 
-barplot(x, y)
+% theta2
+%histfit([samples.theta2(1,:),samples.theta2(2,:)])
+media_t2 = stats.mean.theta2
+desvioStandard_t2 = stats.std.theta2
 
-% % Data Space
-% subplot(122);hold on;
-% axis equal;
-% axis([-1 n1+1 -1 n2+1]);
-% sc=70;
-% for i=0:n1
-%     for j=0:n2
-%         match=length(find(samples.postpredk1==i&samples.postpredk2==j))/nsamples/nchains;
-%         if match>0
-%             ph=plot(i,j,'ks');
-%         set(ph,'markersize',sc*sqrt(match));
-%         end;
-%     end;
-% end;
-% ph=plot(k1,k2,'kx');
-% set(ph,'markersize',16,'linewidth',4);
-% set(gca,'box','on','fontsize',14,'xtick',[0:n1],'ytick',[0:n2]);
-% xlabel('Success Count 1','fontsize',16);
-% ylabel('Success Count 2','fontsize',16);
+% theta3
+%histfit([samples.theta3(1,:),samples.theta3(2,:)])
+media_t3 = stats.mean.theta3
+desvioStandard_t3 = stats.std.theta3
