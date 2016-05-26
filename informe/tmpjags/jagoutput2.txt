@@ -1,5 +1,0 @@
-Welcome to JAGS 3.4.0 on Thu May 26 16:20:50 2016
-JAGS is free software and comes with ABSOLUTELY NO WARRANTY
-Loading module: basemod: ok
-Loading module: bugs: ok
-Failed to open file /home/mathi/Desktop/inferencia-tp/informe/caso_1.txt
