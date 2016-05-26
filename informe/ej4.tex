@@ -1,0 +1,11 @@
+  \begin{equation}
+  \label{eq:4}
+  \begin{aligned}
+	P(cara_i|D) &= \int P(cara_i, \theta_i|D) d\theta_i \\
+					 &= \int P(cara_i|D, \theta_i)  P(\theta_i|D) d\theta_i \\
+					 &= \int P(cara_i|\theta_i)  P(\theta_i|D) d\theta_i \\ 
+					 &= \int \theta_i  \sum_j P(\theta_i, \alpha = j|D) d\theta_i \\ 
+					 &\propto \int \theta_i  \sum_j P(D|\theta_i, \alpha = j) P(\theta_i, \alpha = j) d\theta_i \\ 
+					 &= \int \theta_i  \sum_j P(D|\theta_i) P(\theta_i | \alpha = j) P(\alpha = j) d\theta_i \\ 
+  \end{aligned}
+  \end{equation}

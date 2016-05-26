@@ -14,18 +14,14 @@ model{
 
   # Auxiliary variables
     for Theta's distribution
-  param1 <- ifelse(alpha=1, 0.5, 100)
-  param2 <- ifelse(alpha=2, 0.5, 100)
-  param3 <- ifelse(alpha=3, 0.5, 100)
+  param1 <- ifelse(alpha1=1, 0.5, 100)
+  param2 <- ifelse(alpha2=2, 0.5, 100)
+  param3 <- ifelse(alpha3=3, 0.5, 100)
 
-  # Prior on Rate Alpha
-  for( i in 1:3){
-  pi[i] <- 1/3
-  }
-  alpha ~ dcat(pi[])  
-  # Posterior Predictive
-  # postpredk1 ~ dbin(theta,n)
-  # postpredk2 ~ dbin(theta,n)   
+  # Prior on Rates Alpha
+  alpha1 ~ dbern(0.5)  
+  alpha2 ~ dbern(0.5)  
+  alpha3 ~ dbern(0.5)  
 }
 \end{lstlisting}
 \end{minipage}%
@@ -35,9 +31,9 @@ model{
                     semithick]
   \tikzstyle{every state}=[fill=white,draw=black,text=black]
 
-	\node[state, rectangle]	(0)							{$\beta_2$};
-	\node[state, rectangle]	(10)	[right of=0]				{$\beta_3$};
-	\node[state, rectangle]	(11)	[left of=0]				{$\beta_1$};
+	\node[state, rectangle]	(0)							{$\alpha_2$};
+	\node[state, rectangle]	(10)	[right of=0]				{$\alpha_3$};
+	\node[state, rectangle]	(11)	[left of=0]				{$\alpha_1$};
 	\node[state]				(1) [right of=0, below of=0]	{$\theta_3$};
 	\node[state]				(3) [left of=0, below of=0]	{$\theta_1$};
 	\node[state]				(2) [below of=0] 			{$\theta_2$};
