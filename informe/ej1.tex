@@ -1,0 +1,34 @@
+\begin{figure}[H]
+\begin{minipage}{0.5\textwidth}
+\centering
+\begin{tikzpicture}[>=stealth', shorten >=1pt,auto,node distance=1.9cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=white,draw=black,text=black]
+
+	\node[state]				(0)							{$\beta$};
+	\node[state]				(1) [right of=0, below of=0]	{$\theta_3$};
+	\node[state]				(3) [left of=0, below of=0]	{$\theta_1$};
+	\node[state]				(2) [below of=0] 			{$\theta_2$};
+	\node[state, rectangle]	(5) [below of=2] 			{$4$};
+	\node[state, rectangle]	(4) [below of=1]				{$10$};
+	\node[state, rectangle]	(6) [below of=3] 			{$3$};
+	\node[state, rectangle]	(7) [below of=4] 			{$10$};
+	\node[state, rectangle]	(8) [below of=5]  			{$10$};
+	\node[state, rectangle]	(9) [below of=6] 			{$10$};
+
+	\path[->]	
+			(0) edge  []						node {} (1)
+           		edge  []						node {} (2)
+				edge	  []						node {} (3)			
+			(1) edge  []  					node {} (4)
+			(2) edge  []						node {} (5)
+        		(3)	edge  [] 					node {} (6)
+			(4) edge  []  					node {} (7)
+			(5) edge  []						node {} (8)
+        		(6)	edge  [] 					node {} (9);
+
+\end{tikzpicture}
+\end{minipage}%
+\end{figure}
+
+
