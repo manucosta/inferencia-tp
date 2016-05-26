@@ -5,18 +5,18 @@
                     semithick]
   \tikzstyle{every state}=[fill=white,draw=black,text=black]
 
-	\node[state]				(0)							{$\beta_1$};
-	\node[state]				(10)	 [right of=0]			{$\beta_2$};
-	\node[state]				(11)	 [left of=0]				{$\beta_3$};
+	\node[state, rectangle]	(0)							{$\beta_1$};
+	\node[state, rectangle]	(10)	[right of=0]				{$\beta_2$};
+	\node[state, rectangle]	(11)	[left of=0]				{$\beta_3$};
 	\node[state]				(1) [right of=0, below of=0]	{$\theta_3$};
 	\node[state]				(3) [left of=0, below of=0]	{$\theta_1$};
 	\node[state]				(2) [below of=0] 			{$\theta_2$};
-	\node[state, rectangle]	(5) [below of=2] 			{$4$};
-	\node[state, rectangle]	(4) [below of=1]				{$10$};
-	\node[state, rectangle]	(6) [below of=3] 			{$3$};
-	\node[state, rectangle]	(7) [below of=4] 			{$10$};
-	\node[state, rectangle]	(8) [below of=5]  			{$10$};
-	\node[state, rectangle]	(9) [below of=6] 			{$10$};
+	\node[state, rectangle]	(5) [below of=2, fill=gray]	{$4$};
+	\node[state, rectangle]	(4) [below of=1, fill=gray]	{$10$};
+	\node[state, rectangle]	(6) [below of=3, fill=gray] 	{$3$};
+	\node[state, rectangle]	(7) [below of=4, fill=gray] 	{$10$};
+	\node[state, rectangle]	(8) [below of=5, fill=gray]  {$10$};
+	\node[state, rectangle]	(9) [below of=6, fill=gray] 	{$10$};
 
 	\path[->]	
 			(0) edge  []						node {} (2)
