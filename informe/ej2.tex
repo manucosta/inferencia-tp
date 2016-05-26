@@ -57,7 +57,7 @@ end
 
 \subsection{Correlaciones}
 
-Creimos que podía ser interesante ver el histograma conjunto entre las distribuciones de las monedas. Con esto pudimos visualizar como si en una distribución en cierto punto la moneda estaba cargada en la distribución de la otra moneda esta no lo estaba, esta situación genera los graficos formados alrededor del par de rectas que pasan por el 0.5.
+Creímos que podía ser interesante ver el histograma conjunto entre las distribuciones de las monedas. Con esto pudimos visualizar como si en una distribución en cierto punto la moneda estaba cargada en la distribución de la otra moneda esta no lo estaba. Esta situación genera los graficos formados alrededor del par de rectas que pasan por el 0.5.
 
 \begin{figure}[H]
 \begin{minipage}{0.5\textwidth}
@@ -84,7 +84,7 @@ Creimos que podía ser interesante ver el histograma conjunto entre las distribu
 
 \subsection{Media y Desvío Standard}
 
-En los resultados siguientes se puede ver un poco mas lo que esperabamos y habiamos verificado con los gráficos. Por ejemplo la variable $\alpha$ tiene una esperanza muy cercana a 3, ya que luego de hacer la inferencia con los datos obtenidos todo indica que la moneda número 3 es la cargada.
+En los resultados siguientes se puede ver un poco más lo que esperábamos y habíamos verificado con los gráficos. Por ejemplo la variable $\alpha$ tiene una esperanza muy cercana a 3, ya que luego de hacer la inferencia con los datos obtenidos todo indica que la moneda número 3 es la cargada.
 
 \begin{figure}[H]
 \begin{minipage}{0.5\textwidth}
@@ -114,17 +114,17 @@ $ \sigma (\theta_3) = 0.0680 $
 \end{minipage}
 \end{figure}
 
-Las 2 primeras monedas parecen no estar cargadas con bastante seguridad ya que tienen una media de casi 0.5 con un desvío standard muy bajo. Esta situación creemos que es inducida por los datos obtenidos y la forma en que es armado el módelo donde solo una de las 3 monedas puede estar cargada.
+Las 2 primeras monedas parecen no estar cargadas con bastante seguridad ya que tienen una media de casi 0.5 con un desvío standard muy bajo. Esta situación creemos que es inducida por los datos obtenidos y la forma en que es armado el modelo donde solo una de las 3 monedas puede estar cargada.
 
 \subsection{¿Esta cargada?}
 
 Para calcular la probabilidad de que cada moneda este cargada, tomamos los 200000 samples de $\alpha$ generados por el algoritmo y calculamos la probabilidad de que salga un 1, 2 o 3. El resultado es el siguiente. 
 
 
-P($\alpha$ = 1) = $\frac{694}{200000}$ = 0.0035
+P($\alpha = 1 | D$) = $\frac{694}{200000}$ = 0.0035
 
-P($\alpha$ = 2) = $\frac{468}{200000}$ = 0.0023
+P($\alpha = 2 | D$) = $\frac{468}{200000}$ = 0.0023
 
-P($\alpha$ = 3) = $\frac{198838}{200000}$ = 0.9942
+P($\alpha = 3 | D$) = $\frac{198838}{200000}$ = 0.9942
 
-Algo que nos sorprendió fue que según estos calculos la moneda 1 tiene mas chances de estar cargada que la 2 a pesar de que según los datos esta salió una menor cantidad de veces cara. Quedará como trabajo a futuro verificar si esto fue por el posible error en la aproximación del algoritmo o algun otro aspecto que no tuvimos en cuenta.
+Algo que nos sorprendió fue que según estos calculos la moneda 1 tiene mas chances de estar cargada que la 2 a pesar de que según los datos esta salió una menor cantidad de veces cara. Esto puede entenderse como efecto del error que se comete en la aproximación del algoritmo.
