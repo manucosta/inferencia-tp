@@ -34,9 +34,9 @@ El modelo que escogimos se describe a continuación, en este entran en juego dis
 $\beta \sim Categorical(pi)$
 
 $
-  \theta_1 \sim
+  \theta_i \sim
 \begin{cases}
-  Beta(0.5,0.5)	& \text{if}\ \beta = 1 \\
+  Beta(0.5,0.5)	& \text{if}\ \beta = i \\
   Beta(100,100)	& \text{if}\ \beta \neq 1
 \end{cases}
 $
