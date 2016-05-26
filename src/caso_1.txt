@@ -19,7 +19,4 @@ model{
 	pi[i] <- 1/3
 	}
 	alpha ~ dcat(pi[])	
-	# Posterior Predictive
-	# postpredk1 ~ dbin(theta,n)
-	# postpredk2 ~ dbin(theta,n)   
 }
